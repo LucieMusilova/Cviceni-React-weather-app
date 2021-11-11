@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import "./App.css";
 import Current from './components/Current';
 import Forecast from './components/Forecast';
+import {cities} from "./utils/cities.js";
 
 const App = () => {
 
@@ -41,10 +42,16 @@ const App = () => {
     <div className="App">
       <div className="container">
         <h1>My Weather App</h1>
-        <div className="button-group">
-          <button className="button" onClick={() => setCity("Brno")}>Brno</button>
-          <button className="button" onClick={() => setCity("Vancouver")}>Vancouver</button>
-          <button className="button" onClick={() => setCity("Edinburgh")}>Edinburgh</button>
+        <div className="select-wrapper">
+          <select
+            className="select"
+            name="cityselect"
+            id="cityselect"
+            value={city}
+            onChange={(event) => setCity(event.target.value)}
+          >
+            {cities.map((town, index) => <option key={index} value={town}>{town}</option>)}
+          </select>
         </div>
         {(weather !== null || undefined) && (forecast !== null || undefined) ? 
         <div className="weather">
