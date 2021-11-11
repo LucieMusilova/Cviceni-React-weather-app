@@ -1,10 +1,6 @@
 import React from 'react';
 import "./style.css";
-
-function time(a) {
-  let time = (new Date(a*1000)+'').slice(16,21);
-  return time;
-}
+import {time} from "../../utils/index.js";
 
 const Current= ({weather}) => {
 return (

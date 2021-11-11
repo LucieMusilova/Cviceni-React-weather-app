@@ -48,9 +48,12 @@ const App = () => {
         {(weather !== null || undefined) && (forecast !== null || undefined) ? 
         <div className="weather">
           <Current weather={weather}/> 
-          {forecast.map(
-              (fore, index) => <Forecast key={index} forecast={fore}/>)}
+          <div className="weather__forecast" id="predpoved">
+            {forecast.map(
+                (fore, index) => <Forecast key={index} forecast={fore}/>)}
+          </div>
         </div> : null} 
+        
      </div>
     </div>
     
