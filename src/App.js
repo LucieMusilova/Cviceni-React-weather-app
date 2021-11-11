@@ -31,7 +31,8 @@ const App = () => {
   useEffect(() => {
     fetchWeather();
     fetchForecast();
-  }, [city]);
+  }, [city]);// eslint-disable-line react-hooks/exhaustive-deps
+
   console.log(weather);
   console.log(forecast);
 
